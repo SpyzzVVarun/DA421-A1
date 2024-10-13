@@ -127,7 +127,7 @@ For adult dataset, we use the protected attribute as race. For census-income dat
 
 We implement the `DiscoveryN` algorithm on the Adult dataset with race as the protected attributes (non-whites) to obtain the `t-labelled` dataset. Then we use a DecisionTree classifier for 'disc' label and analyze performance metrics such as accuracy, precision, recall, F1-score on the test set (70:30 split)
 
-On the original and `t-corrected` data which is obtained via the `PreventionN` algorithm, we implement Decision Tree, Naive Bayes and Logistic regression classifiers and report accuracy obtained, t = 0.10 discrimination of the classifier predictions.
+On the original and `t-corrected` data which is obtained via the `PreventionN` algorithm, we implement Decision Tree, Naive Bayes and Logistic regression classifiers and report accuracy obtained, t = 0.10 discrimination and the Classifier discrimination of the classifier predictions.
 
 ## Results
 
@@ -212,26 +212,30 @@ Here, we provide the results of our experimentation along with the corresponding
 <table class="tg"><thead>
   <tr>
     <th class="tg-c3ow"></th>
-    <th class="tg-c3ow" colspan="2">No preprocessing</th>
-    <th class="tg-c3ow" colspan="2">0.1 correction</th>
+    <th class="tg-c3ow" colspan="3">No preprocessing</th>
+    <th class="tg-c3ow" colspan="3">0.1 correction</th>
     <th class="tg-c3ow" colspan="2">0.05 correction</th>
   </tr></thead>
 <tbody>
   <tr>
     <td class="tg-0pky">Classifier</td>
     <td class="tg-0pky">Accuracy </td>
+    <td class="tg-0pky">Classifier disc</td>
     <td class="tg-0pky">0.1 disc</td>
     <td class="tg-0pky">Accuracy</td>
+    <td class="tg-0pky">Classifier disc</td>
     <td class="tg-0pky">0.1 disc</td>
     <td class="tg-0pky">Accuracy</td>
-    <td class="tg-0pky">0.05 disc</td>
+    <td class="tg-0pky">Classifier disc</td>
   </tr>
   <tr>
     <td class="tg-c3ow">Decision Tree</td>
     <td class="tg-0pky">81.90%</td>
     <td class="tg-0pky"> 7.82%</td>
+    <td class="tg-0pky"> 4.72%</td>
     <td class="tg-0pky">81.21%</td>
     <td class="tg-0pky"> 6.82%</td>
+    <td class="tg-0pky"> 1.92%</td>
     <td class="tg-0pky">79.75%</td>
     <td class="tg-0pky"> 3.85%</td>
   </tr>
@@ -239,8 +243,10 @@ Here, we provide the results of our experimentation along with the corresponding
     <td class="tg-c3ow">Naive Bayes</td>
     <td class="tg-0pky">79.31%</td>
     <td class="tg-0pky">15.34%</td>
+    <td class="tg-0pky"> 6.39%</td>
     <td class="tg-0pky">77.32%</td>
     <td class="tg-0pky">12.58%</td>
+    <td class="tg-0pky"> 3.38%</td>
     <td class="tg-0pky">75.15%</td>
     <td class="tg-0pky"> 7.59%</td>
   </tr>
@@ -248,8 +254,10 @@ Here, we provide the results of our experimentation along with the corresponding
     <td class="tg-baqh">Logistic Regression</td>
     <td class="tg-0lax">85.20%</td>
     <td class="tg-0lax"> 8.46%</td>
+    <td class="tg-0lax"> 5.26%</td>
     <td class="tg-0lax">85.03%</td>
     <td class="tg-0lax"> 6.65%</td>
+    <td class="tg-0lax"> 1.16%</td>
     <td class="tg-0lax">84.71%</td>
     <td class="tg-0lax"> 4.20%</td>
   </tr>
@@ -259,26 +267,30 @@ Here, we provide the results of our experimentation along with the corresponding
 <table class="tg"><thead>
   <tr>
     <th class="tg-c3ow"></th>
-    <th class="tg-c3ow" colspan="2">No preprocessing</th>
-    <th class="tg-c3ow" colspan="2">0.1 correction</th>
+    <th class="tg-c3ow" colspan="3">No preprocessing</th>
+    <th class="tg-c3ow" colspan="3">0.1 correction</th>
     <th class="tg-c3ow" colspan="2">0.05 correction</th>
   </tr></thead>
 <tbody>
   <tr>
     <td class="tg-0pky">Classifier</td>
     <td class="tg-0pky">Accuracy </td>
+    <td class="tg-0pky">Classifier disc</td>
     <td class="tg-0pky">0.1 disc</td>
     <td class="tg-0pky">Accuracy</td>
+    <td class="tg-0pky">Classifier disc</td>
     <td class="tg-0pky">0.1 disc</td>
     <td class="tg-0pky">Accuracy</td>
-    <td class="tg-0pky">0.05 disc</td>
+    <td class="tg-0pky">Classifier disc</td>
   </tr>
   <tr>
     <td class="tg-c3ow">Decision Tree</td>
     <td class="tg-0pky">92.53%</td>
     <td class="tg-0pky"> 4.06%</td>
+    <td class="tg-0pky"> 1.06%</td>
     <td class="tg-0pky">91.70%</td>
     <td class="tg-0pky"> 1.72%</td>
+    <td class="tg-0pky"> 0.32%</td>
     <td class="tg-0pky">90.07%</td>
     <td class="tg-0pky">-1.07%</td>
   </tr>
@@ -286,8 +298,10 @@ Here, we provide the results of our experimentation along with the corresponding
     <td class="tg-c3ow">Naive Bayes</td>
     <td class="tg-0pky">88.82%</td>
     <td class="tg-0pky">11.71%</td>
+    <td class="tg-0pky"> 2.41%</td>
     <td class="tg-0pky">87.90%</td>
     <td class="tg-0pky"> 9.46%</td>
+    <td class="tg-0pky"> 0.86%</td>
     <td class="tg-0pky">83.44%</td>
     <td class="tg-0pky"> 7.56%</td>
   </tr>
@@ -295,8 +309,10 @@ Here, we provide the results of our experimentation along with the corresponding
     <td class="tg-baqh">Logistic Regression</td>
     <td class="tg-0lax">94.86%</td>
     <td class="tg-0lax"> 2.08%</td>
+    <td class="tg-0lax"> 1.04%</td>
     <td class="tg-0lax">93.46%</td>
     <td class="tg-0lax">-1.79%</td>
+    <td class="tg-0lax"> 0.79%</td>
     <td class="tg-0lax">93.44%</td>
     <td class="tg-0lax">-9.62%</td>
   </tr>
@@ -306,44 +322,52 @@ Here, we provide the results of our experimentation along with the corresponding
 <table class="tg"><thead>
   <tr>
     <th class="tg-c3ow"></th>
-    <th class="tg-c3ow" colspan="2">No preprocessing</th>
-    <th class="tg-c3ow" colspan="2">0.1 correction</th>
+    <th class="tg-c3ow" colspan="3">No preprocessing</th>
+    <th class="tg-c3ow" colspan="3">0.1 correction</th>
     <th class="tg-c3ow" colspan="2">0.05 correction</th>
   </tr></thead>
 <tbody>
   <tr>
     <td class="tg-0pky">Classifier</td>
     <td class="tg-0pky">Accuracy </td>
+    <td class="tg-0pky">Classifier disc</td> 
     <td class="tg-0pky">0.1 disc</td>
     <td class="tg-0pky">Accuracy</td>
+    <td class="tg-0pky">Classifier disc</td> 
     <td class="tg-0pky">0.1 disc</td>
     <td class="tg-0pky">Accuracy</td>
-    <td class="tg-0pky">0.05 disc</td>
+    <td class="tg-0pky">Classifier disc</td>
   </tr>
   <tr>
     <td class="tg-c3ow">Decision Tree</td>
     <td class="tg-0pky">92.46%</td>
     <td class="tg-0pky"> 3.07%</td>
+    <td class="tg-0pky"> 1.16%</td>
     <td class="tg-0pky">91.13%</td>
     <td class="tg-0pky"> 1.86%</td>
+    <td class="tg-0pky"> 0.36%</td>
     <td class="tg-0pky">90.69%</td>
     <td class="tg-0pky">-3.85%</td>
   </tr>
   <tr>
     <td class="tg-c3ow">Naive Bayes</td>
     <td class="tg-0pky">88.82%</td>
-    <td class="tg-0pky">-3.34%</td>
+    <td class="tg-0pky"> 8.34%</td>
+    <td class="tg-0pky"> 1.24%</td>
     <td class="tg-0pky">87.30%</td>
-    <td class="tg-0pky">-4.58%</td>
+    <td class="tg-0pky"> 7.58%</td>
+    <td class="tg-0pky"> 0.28%</td>
     <td class="tg-0pky">82.72%</td>
-    <td class="tg-0pky">-6.59%</td>
+    <td class="tg-0pky"> 6.59%</td>
   </tr>
   <tr>
     <td class="tg-baqh">Logistic Regression</td>
     <td class="tg-0lax">94.86%</td>
     <td class="tg-0lax"> 0.93%</td>
+    <td class="tg-0lax"> 1.23%</td>
     <td class="tg-0lax">93.70%</td>
     <td class="tg-0lax">-1.65%</td>
+    <td class="tg-0lax"> 0.03%</td>
     <td class="tg-0lax">90.53%</td>
     <td class="tg-0lax">-3.20%</td>
   </tr>
