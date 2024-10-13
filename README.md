@@ -297,7 +297,7 @@ Here, we provide the results of our experimentation along with the corresponding
     <td class="tg-c3ow">Naive Bayes</td>
     <td class="tg-0pky">88.82%</td>
     <td class="tg-0pky">11.71%</td>
-    <td class="tg-0pky"> 2.41%</td>
+    <td class="tg-0pky"> 1.41%</td>
     <td class="tg-0pky">87.90%</td>
     <td class="tg-0pky"> 9.46%</td>
     <td class="tg-0pky"> 0.86%</td>
