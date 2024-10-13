@@ -131,6 +131,83 @@ On the original and `t-corrected` data which is obtained via the `PreventionN` a
 
 ## Results
 
+Here, we provide the results of our experimentation along with the corresponding results made available in the reference research paper.
+
+## Discrimination Discovery
+
+<table><thead>
+  <tr>
+    <th></th>
+    <th>Accuracy </th>
+    <th>Precision</th>
+    <th>Recall</th>
+    <th>F1-Score</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>Adult (Race)</td>
+    <td>89.12%</td>
+    <td>48.73%</td>
+    <td>51.33%</td>
+    <td>50.00%</td>
+  </tr>
+  <tr>
+    <td>Census-Income (Race)</td>
+    <td>92.09%</td>
+    <td>32.39%</td>
+    <td>29.87%</td>
+    <td>31.08%</td>
+  </tr>
+  <tr>
+    <td>Census-Income (Marital Status)</td>
+    <td>89.63%</td>
+    <td>22.05%</td>
+    <td>20.54%</td>
+    <td>21.27%</td>
+  </tr>
+</tbody>
+</table>
+
+## Discrimnation Prevention
+
+### Research Paper Results (Adult Dataset)
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow" colspan="2">No preprocessing</th>
+    <th class="tg-c3ow" colspan="2">0.1 correction</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Classifier</td>
+    <td class="tg-0pky">Accuracy </td>
+    <td class="tg-0pky">0.1 disc</td>
+    <td class="tg-0pky">Accuracy</td>
+    <td class="tg-0pky">0.1 disc</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Decision Tree</td>
+    <td class="tg-0pky">85.60%</td>
+    <td class="tg-0pky"> 4.24%</td>
+    <td class="tg-0pky">84.94%</td>
+    <td class="tg-0pky"> 1.07%</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Naive Bayes</td>
+    <td class="tg-0pky">82.46%</td>
+    <td class="tg-0pky"> 4.06%</td>
+    <td class="tg-0pky">82.33%</td>
+    <td class="tg-0pky"> 2.23%</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">Logistic Regression</td>
+    <td class="tg-0lax">85.28%</td>
+    <td class="tg-0lax"> 6.61%</td>
+    <td class="tg-0lax">84.70%</td>
+    <td class="tg-0lax"> 0.61%</td>
+  </tr>
+</tbody></table>
+
 ### Our Implementation (Adult Dataset)
 <table class="tg"><thead>
   <tr>
@@ -178,12 +255,13 @@ On the original and `t-corrected` data which is obtained via the `PreventionN` a
   </tr>
 </tbody></table>
 
-### Research Paper Results (Adult Dataset)
+### Our Implementation (Census Dataset, Race Sensitive Attribute)
 <table class="tg"><thead>
   <tr>
     <th class="tg-c3ow"></th>
     <th class="tg-c3ow" colspan="2">No preprocessing</th>
     <th class="tg-c3ow" colspan="2">0.1 correction</th>
+    <th class="tg-c3ow" colspan="2">0.05 correction</th>
   </tr></thead>
 <tbody>
   <tr>
@@ -192,26 +270,82 @@ On the original and `t-corrected` data which is obtained via the `PreventionN` a
     <td class="tg-0pky">0.1 disc</td>
     <td class="tg-0pky">Accuracy</td>
     <td class="tg-0pky">0.1 disc</td>
+    <td class="tg-0pky">Accuracy</td>
+    <td class="tg-0pky">0.05 disc</td>
   </tr>
   <tr>
     <td class="tg-c3ow">Decision Tree</td>
-    <td class="tg-0pky">85.60%</td>
-    <td class="tg-0pky"> 4.24%</td>
-    <td class="tg-0pky">84.94%</td>
-    <td class="tg-0pky"> 1.07%</td>
+    <td class="tg-0pky">92.53%</td>
+    <td class="tg-0pky"> 4.06%</td>
+    <td class="tg-0pky">91.70%</td>
+    <td class="tg-0pky"> 1.72%</td>
+    <td class="tg-0pky">90.07%</td>
+    <td class="tg-0pky">-1.07%</td>
   </tr>
   <tr>
     <td class="tg-c3ow">Naive Bayes</td>
-    <td class="tg-0pky">82.46%</td>
-    <td class="tg-0pky"> 4.06%</td>
-    <td class="tg-0pky">82.33%</td>
-    <td class="tg-0pky"> 2.23%</td>
+    <td class="tg-0pky">88.82%</td>
+    <td class="tg-0pky">11.71%</td>
+    <td class="tg-0pky">87.90%</td>
+    <td class="tg-0pky"> 9.46%</td>
+    <td class="tg-0pky">83.44%</td>
+    <td class="tg-0pky"> 7.56%</td>
   </tr>
   <tr>
     <td class="tg-baqh">Logistic Regression</td>
-    <td class="tg-0lax">85.28%</td>
-    <td class="tg-0lax"> 6.61%</td>
-    <td class="tg-0lax">84.70%</td>
-    <td class="tg-0lax"> 0.61%</td>
+    <td class="tg-0lax">94.86%</td>
+    <td class="tg-0lax"> 2.08%</td>
+    <td class="tg-0lax">93.46%</td>
+    <td class="tg-0lax">-1.79%</td>
+    <td class="tg-0lax">93.44%</td>
+    <td class="tg-0lax">-9.62%</td>
   </tr>
 </tbody></table>
+
+### Our Implementation (Census Dataset, Marital Status Sensitive Attribute)
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow" colspan="2">No preprocessing</th>
+    <th class="tg-c3ow" colspan="2">0.1 correction</th>
+    <th class="tg-c3ow" colspan="2">0.05 correction</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Classifier</td>
+    <td class="tg-0pky">Accuracy </td>
+    <td class="tg-0pky">0.1 disc</td>
+    <td class="tg-0pky">Accuracy</td>
+    <td class="tg-0pky">0.1 disc</td>
+    <td class="tg-0pky">Accuracy</td>
+    <td class="tg-0pky">0.05 disc</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Decision Tree</td>
+    <td class="tg-0pky">92.46%</td>
+    <td class="tg-0pky"> 3.07%</td>
+    <td class="tg-0pky">91.13%</td>
+    <td class="tg-0pky"> 1.86%</td>
+    <td class="tg-0pky">90.69%</td>
+    <td class="tg-0pky">-3.85%</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Naive Bayes</td>
+    <td class="tg-0pky">88.82%</td>
+    <td class="tg-0pky">-3.34%</td>
+    <td class="tg-0pky">87.30%</td>
+    <td class="tg-0pky">-4.58%</td>
+    <td class="tg-0pky">82.72%</td>
+    <td class="tg-0pky">-6.59%</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">Logistic Regression</td>
+    <td class="tg-0lax">94.86%</td>
+    <td class="tg-0lax"> 0.93%</td>
+    <td class="tg-0lax">93.70%</td>
+    <td class="tg-0lax">-1.65%</td>
+    <td class="tg-0lax">90.53%</td>
+    <td class="tg-0lax">-3.20%</td>
+  </tr>
+</tbody></table>
+
