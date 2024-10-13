@@ -14,10 +14,9 @@ In this section I describe the implementation details necessary to fulfill the o
 
 ### Data Preprocessing
 
-The datasets underwent standard pre-processing steps to ensure uniformity and accuracy. We first removed missing values using mean imputation for numerical features and the mode for categorical features. We used one-hot encoding for categorical features, applied Min-Max scaling to normalize all ordinal attributes between 0 and 1 and standardized all the numeric attributes. Finally, the dataset was split into 70% train, 30% test data.
+The datasets underwent standard pre-processing steps to ensure uniformity and accuracy. We first removed missing values using mean imputation for numerical features and the mode for categorical features. We used one-hot encoding and label encoding for categorical features, applied Min-Max scaling to normalize all ordinal attributes between 0 and 1 and standardized all the numeric attributes. Finally, the dataset was split into 70% train, 30% test data.
 
-* Discuss specifics for the Adult dataset
-* Discuss specifics for the census income dataset
+Data sampling was performed on the census-income dataset due to its large size to allow timely and efficient computation for the experiments. A stratified sample of 40,000 rows (approx 20%) was created based on the race distribution, ensuring that the demographic composition of the dataset remained intact. This allowed for efficient computation while preserving the integrity of demographic attributes in the analysis.
 
 ### Custom Distance Function
 
@@ -125,9 +124,9 @@ The algorithm evaluates both classifiers on the validation dataset (V) to compar
 
 For adult dataset, we use the protected attribute as race. For census-income dataset, we use the protected attribute as race in one experiment and in another experiment use marital status.
 
-We implement the `DiscoveryN` algorithm on the Adult dataset with race as the protected attributes (non-whites) to obtain the `t-labelled` dataset. Then we use a DecisionTree classifier for 'disc' label and analyze performance metrics such as accuracy, precision, recall, F1-score on the test set (70:30 split)
+We implement the `DiscoveryN` algorithm on the Adult dataset with race as the protected attributes (non-whites) to obtain the `t-labelled` dataset. Then we use a DecisionTree classifier for 'disc' label and analyze performance metrics such as accuracy, precision, recall, F1-score on the test set (80:20 split on the protected group set). Similar experiments were done on the census-income dataset using race and marital-status attributes.
 
-On the original and `t-corrected` data which is obtained via the `PreventionN` algorithm, we implement Decision Tree, Naive Bayes and Logistic regression classifiers and report accuracy obtained, t = 0.10 discrimination and the Classifier discrimination of the classifier predictions.
+On the original and `t-corrected` (t = 0.1) data which is obtained via the `PreventionN` algorithm, we implement Decision Tree, Naive Bayes and Logistic regression classifiers and report accuracy obtained, t = 0.10 discrimination and the Classifier discrimination of the classifier predictions. We also report the accuracy and Classifier discrimination for 0.05-corrected data. For this we use the initial train test splits (66.66 : 33.33 splits)
 
 ## Results
 
